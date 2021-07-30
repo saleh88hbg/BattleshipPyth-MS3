@@ -1,45 +1,205 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Battleship Python!
 
-Welcome saleh88hbg,
+## About 
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+Battleship is an terminal game programed with Python, wich runs in the Code Institute mock terminal on Heroku.
 
-## Gitpod Reminders
+Battleship is a funny and a widely-known board game in which the goal is to destroy the opposing player's fleet.
+It all depends on the luck of your finding shots to initially hit your targets. 
+[Read more about the game!](https://en.wikipedia.org/wiki/Battleship_(game))
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
 
-`python3 -m http.server`
+Give it a try!
 
-A blue button should appear to click: *Make Public*,
+[Click here to try out the live game/project.](https://battleship-ms3.herokuapp.com/)
 
-Another blue button should appear to click: *Open Browser*.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
-A blue button should appear to click: *Make Public*,
+## User Experriense
 
-Another blue button should appear to click: *Open Browser*.
+![Responsive Battleship](assets/img/readmeimg/kkkkkk.png)
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
 
-## Updates Since The Instructional Video
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+## How to play
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+In this version of Battleship the user starts the game by first typing the size of the grid they would like to play on.
+By typing in the name on the player the game will fire on and the user will have the ability to strike their first move 
+by guissing and calling out coordinates to find out the computer ships and sink them.
+The game will randomly generate and populate four ships on each board. 
+The grid allways start on: 0 row and 0 column.
+Guesses are marked on the board with an X and hits are marked by * .
+To gain a win you have to sink all of the computer's ships before it sinks yours!
+  
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+## Features 
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+### Existing Features
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+- __Start the Battle__
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+  - One board each are generated on the specified grid size
+  - Ships are randomly placed on the player and the computer board
+  - The player can see where his ships are located by the (@) mark
+  - The player can not se where the computer ships are located on the board
+  
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+![Board](assets/img/readmeimg/Start the Battle.png)
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
 
---------
 
-Happy coding!
+- __In game Guess__
+
+  - User input implemented 
+  - Viewing in game score
+  - View chosen guess
+  
+
+![Board](assets/img/readmeimg/kkkkkk.png)
+
+
+
+- __In game Validation__
+
+  - Only numbers are verified as an input
+  - The user cannot guess same cordinents twice
+  - Cordinates outside the grid size is not allowed
+  - The Data is maintained in class instances
+  
+
+![Board](assets/img/readmeimg/kkkkkk.png)
+
+
+
+### Features Left to Implement
+In a near future I would like to implement:
+- 2 player mode
+- Allow user to position ships themselves
+
+
+
+## Data Model
+
+I decided to use two classes for the game model. One Board class and one Game class. 
+
+- __Board Class__
+  - self.size = To set the board size
+  - self.num_ships = To set number of ships in game
+  - self.player = 
+  - self.guesses =
+  - self.populate
+  
+  
+- __Game Class__
+  - self.size = size
+  - self.num_ships = num_ships
+  - self.scores = {"computer": 0, "player": 0}
+
+
+
+## Testing 
+
+- Code validator and test
+  - [PEP 8 linter](http://pep8online.com/)
+  - No errors were found when passing through the test.
+
+- Manual invalid inputs
+  - Validate that Value Error is given to the user when wrong value is inputted
+  - Write string, text instead of numbers when numbers are expected
+  - Out of bouds inputs exemple out of grid number
+  - Same input as given in past game season
+
+- Local terminal and the Code institute Heroku terminal
+  - Test done on my local terminal in Visual Studio IDE
+  - Test done when project was deployed on Heroku with the Code Institute mockup terminal
+
+
+### Bugs
+
+- Solved Bugs
+  - 
+  
+- Remaining Bugs
+  -   
+
+- Validator Testing
+  - PEP8
+    - No errors were returned from (http://pep8online.com/)
+
+
+## Languages, Frameworks, IDE, Libraries and Programs
+
+[Python:](https://en.wikipedia.org/wiki/History_of_Python)
+- The programming language Python was used. 
+
+[Python random library:](https://docs.python.org/3/library/random.html)
+- random.randint was used to generate random integer numbers in the game. 
+
+[GitHub:](https://github.com/)
+- GitHub was used to store the projects code after being pushed from Git.
+
+[Visual Studio Code:](https://code.visualstudio.com/)
+- Was used to develop and write my project locally.
+
+[Gitpod:](https://www.gitpod.io/)
+- Was used to complement the development and write my project and push all commits through integrated "git" to Github.
+
+[Heroku:](https://www.heroku.com/what)
+- Was used for deployment of the project live in the cloud.
+
+
+
+## Deployment
+
+This project was published and deplyed using the Code Institute mock teminal for Heroku
+ - Steps for deplyment: 
+   - Fork or clone this repository
+   - Create a new Heroku application
+   - Set the buildpack in the setting to "heroku/python" and "heroku/nodejs"
+   - In the "Deploy" menu chose "Deployment method" GitHub
+   - Connect and chose the repository in the "App connected to GitHub" 
+   - Choose either "Automatic deployment" = wich mean that every push to the branch you specify will deploy a new version of this app 
+   - "Manual deploy" = this will deploy the current state/version of the branch   
+
+The live link can be found here - https://battleship-ms3.herokuapp.com/
+
+
+
+## Cloning
+
+If you wish to clone this repository you can use following steps:
+ - Go to the Git Hub website and log in.
+ - Locate the Repository used for this project.
+ - Under the Repository name locate the button "Code" and once clicked you will see the options to get the url to the repository
+   copy the URL based on the protocol that you would like to use. 
+ - At the terminal type `git clone` and paste the url copied from the step above.
+
+
+
+## Credits 
+
+### Credits for the information and learning material i've used:
+
+- (https://stackoverflow.com/)
+- (https://docs.python.org/3/library/)
+- (https://github.com/dmoisset/battleship-dojo)
+- Code Institute project 3 Scope video
+
+
+### Content 
+
+- Tutuorial on the build up of the application [website](https://learnersbucket.com/tutorials/js-projects/rock-paper-scissor-lizard-spock-game-in-javascript/)
+- Link in the about section "classic" [website](https://en.wikipedia.org/wiki/Rock_paper_scissors)
+- Link to the about section "modern" [website](https://www.wikihow.com/Play-Rock-Paper-Scissors-Lizard-Spock)
+
+
+### Acknowledgments
+
+- My mentor Guido Cecilio for his support.
+- My friend Roy for his guidance and support.
+- Code Institute idea from Project Portfolio 3 (Example Idea Nr 2)
+- Code Institute project 3 Scope video 
+
+---
+
+"Saleh Chehade" 2021-07-30 "Happy coding"
