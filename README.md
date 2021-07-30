@@ -185,14 +185,6 @@ If you wish to clone this repository you can use following steps:
 - (https://github.com/dmoisset/battleship-dojo)
 - Code Institute project 3 Scope video
 
-
-### Content 
-
-- Tutuorial on the build up of the application [website](https://learnersbucket.com/tutorials/js-projects/rock-paper-scissor-lizard-spock-game-in-javascript/)
-- Link in the about section "classic" [website](https://en.wikipedia.org/wiki/Rock_paper_scissors)
-- Link to the about section "modern" [website](https://www.wikihow.com/Play-Rock-Paper-Scissors-Lizard-Spock)
-
-
 ### Acknowledgments
 
 - My mentor Guido Cecilio for his support.
