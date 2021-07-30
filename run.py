@@ -146,10 +146,10 @@ class Game:
         before returning them
         """
         while True:
-            x = input("Guess a row:\n")
-            y = input("Guess a column:\n")
             try:
+                x = input("Guess a row:\n")
                 x = int(x)
+                y = input("Guess a column:\n")
                 y = int(y)
                 break
             except ValueError:
