@@ -145,18 +145,15 @@ class Game:
         Asks the user for row and column and validate that they are numbers
         before returning them
         """
-        x = input("Guess a row:\n")
-        y = input("Guess a column:\n")
         while True:
+            x = input("Guess a row:\n")
+            y = input("Guess a column:\n")
             try:
                 x = int(x)
                 y = int(y)
                 break
             except ValueError:
                 print("Row and column must be numbers")
-
-            x = input("Guess a row:\n")
-            y = input("Guess a column:\n")
 
         return (x, y)
 
@@ -225,14 +222,13 @@ class Game:
 
 
 # Ask the user what grid size to use, validate the size, then start a new game
-size = input("What grid size do you want to use?\n")
 while True:
+    size = input("What grid size do you want to use?\n")
     try:
         size = int(size)
         break
     except ValueError:
         print("Row and column must be numbers")
-    size = input("What grid size do you want to use?\n")
 
 game = Game(size=size, num_ships=4)
 game.start()
