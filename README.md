@@ -85,15 +85,15 @@ I decided to use two classes for the game model. One Board class and one Game cl
 - __Board Class__
   - self.size = To set the board size
   - self.num_ships = To set number of ships in game
-  - self.player = 
-  - self.guesses =
-  - self.populate
+  - self.player = Bolian indicate if the board belongs to a player or computer
+  - self.guesses = List of passed guesses
+  - self.populate = Creates in memory board with the players ship
   
   
 - __Game Class__
-  - self.size = size
-  - self.num_ships = num_ships
-  - self.scores = {"computer": 0, "player": 0}
+  - self.size = To set the board size
+  - self.num_ships = To set number of ships in game
+  - self.scores = Set score when ship is sunk
 
 
 
@@ -106,8 +106,8 @@ I decided to use two classes for the game model. One Board class and one Game cl
 - Manual invalid inputs
   - Validate that Value Error is given to the user when wrong value is inputted
   - Write string, text instead of numbers when numbers are expected
-  - Out of bouds inputs exemple out of grid number
-  - Same input as given in past game season
+  - Out of bounds inputs exemple out of grid number
+  - Same guess can not be performed twice
 
 - Local terminal and the Code institute Heroku terminal
   - Test done on my local terminal in Visual Studio IDE
@@ -116,11 +116,8 @@ I decided to use two classes for the game model. One Board class and one Game cl
 
 ### Bugs
 
-- Solved Bugs
-  - 
+No known bugs
   
-- Remaining Bugs
-  -   
 
 - Validator Testing
   - PEP8
@@ -152,13 +149,13 @@ I decided to use two classes for the game model. One Board class and one Game cl
 ## Deployment
 
 This project was published and deplyed using the Code Institute mock teminal for Heroku
- - Steps for deplyment: 
+ - Steps for deployment: 
    - Fork or clone this repository
    - Create a new Heroku application
    - Set the buildpack in the setting to "heroku/python" and "heroku/nodejs"
    - In the "Deploy" menu chose "Deployment method" GitHub
-   - Connect and chose the repository in the "App connected to GitHub" 
-   - Choose either "Automatic deployment" = wich mean that every push to the branch you specify will deploy a new version of this app 
+   - Connect and choose the repository in the "App connected to GitHub" 
+   - Choose either "Automatic deployment" = wich means that every push to the branch you specify will deploy a new version of this app 
    - "Manual deploy" = this will deploy the current state/version of the branch   
 
 The live link can be found here - https://battleship-ms3.herokuapp.com/
