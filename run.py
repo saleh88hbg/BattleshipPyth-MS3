@@ -1,4 +1,3 @@
-# python code goes here
 from random import randint
 
 
@@ -13,11 +12,11 @@ def random_coordinate(grid_size):
 
 def valid_coordinates(x, y, grid_size):
     """
-    Verifies that a pair of coordinates are within the grid size
+    Verify that a pair of coordinates are within the grid size
     """
     if 0 <= x < grid_size and 0 <= y < grid_size:
         return True
-    
+
     return False
 
 
@@ -39,7 +38,7 @@ class Board:
 
     def print(self):
         """
-        Prints the current board state.
+        Prints the current board state
         """
         print(f"{self.name}'s Board:")
         for row in self.board:
@@ -47,7 +46,7 @@ class Board:
 
     def guess(self, x, y):
         """
-        Makes a guess and marks it on the board
+        Makes a guess and mark it on the board
         """
         self.guesses.append((x, y))
         self.board[x][y] = "X"
@@ -57,15 +56,15 @@ class Board:
             return True
         else:
             return False
-    
+
     def already_guessed(self, x, y):
         """
-        Returns true if the coordinates have already been guessed before
+        Returns True if the coordinates have already been guessed before
         """
         if (x, y) in self.guesses:
             return True
         return False
-    
+
     def last_guess(self):
         """
         Returns the last guess performed on the board
@@ -76,7 +75,8 @@ class Board:
         """
         Populates the board with ships
         """
-        self.board = [["." for x in range(self.size)] for y in range(self.size)]
+        board = [["." for x in range(self.size)] for y in range(self.size)]
+        self.board = board
         for _ in range(self.num_ships):
             x, y = random_coordinate(self.size)
             while (x, y) in self.ships:
@@ -84,6 +84,7 @@ class Board:
             self.ships.append((x, y))
             if self.player:
                 self.board[x][y] = "@"
+
 
 class Game:
     """
@@ -101,12 +102,14 @@ class Game:
         Show welcome screen, initialize the boards and start the game
         """
         self.show_info()
-        self.computer_board = Board(self.size, self.num_ships, "Computer", player=False)
+        tmp_board = Board(self.size, self.num_ships, "Computer", player=False)
+        self.computer_board = tmp_board
         player_name = input("Please enter your name:\n")
-        self.player_board = Board(self.size, self.num_ships, player_name, player=True)
-        
+        tmp_board = Board(self.size, self.num_ships, player_name, player=True)
+        self.player_board = tmp_board
+
         self.play()
-    
+
     def play(self):
         """
         Main game loop that takes care of guesses and exits the game if it's
@@ -130,15 +133,17 @@ class Game:
                 x, y = random_coordinate(self.size)
             computer_hit = self.player_board.guess(x, y)
 
-            
+            # end of round
             self.round_tally(player_hit, computer_hit)
-            round_choice = input("Type \"quit\" to quit or anything else to continue.\n")
-            if round_choice == "quit":
+            choice = input("Type \"quit\" to quit or anything else " +
+                           "to continue.\n")
+            if choice == "quit":
                 break
-    
+
     def make_guess(self):
         """
-        Asks the user for 
+        Asks the user for row and column and validate that they are numbers
+        before returning them
         """
         x = input("Guess a row:\n")
         y = input("Guess a column:\n")
@@ -156,10 +161,17 @@ class Game:
         return (x, y)
 
     def print_boards(self):
+        """
+        Print current board status on screen
+        """
         self.player_board.print()
         self.computer_board.print()
 
     def valid_guess(self, x, y):
+        """
+        Returns True if the coordinates are within the board grid and if they
+        haven't been guessed before
+        """
         if not valid_coordinates(x, y, self.size):
             print(f"Row and column must be between 0 and {self.size - 1}")
             return False
@@ -171,9 +183,10 @@ class Game:
 
     def game_over(self):
         """
-        Checks if a player
+        Checks if either player has sunk the other player's battle ships
         """
-        if self.scores["player"] >= self.num_ships or self.scores["computer"] >= self.num_ships:
+        if self.scores["player"] >= self.num_ships or \
+           self.scores["computer"] >= self.num_ships:
             return True
         return False
 
@@ -182,7 +195,8 @@ class Game:
         Output the scores after each round
         """
         print("-" * 35)
-        print(f"{self.player_board.name} guessed {self.computer_board.last_guess()}")
+        print(f"{self.player_board.name} guessed " +
+              f"{self.computer_board.last_guess()}")
         if player_hit:
             self.scores["player"] += 1
             print("That was a hit!")
@@ -195,30 +209,30 @@ class Game:
         else:
             print("That was a miss!")
         print("\nAfter this round, the scores are:")
-        print(f"{self.player_board.name}:{self.scores['player']} . Computer:{self.scores['computer']}")
+        print(f"{self.player_board.name}:" +
+              f"{self.scores['player']} . Computer:{self.scores['computer']}")
         print("-" * 35)
 
     def show_info(self):
         """
-        Show data here
+        Show welcome message and information about the board
         """
         print("-" * 35)
-        print(" Welcome to the greatest BATTLESHIPS game!")
+        print(" Welcome to ULTIMATE BATTLESHIPS!!")
         print(f" Board Size: {self.size}. Number of ships: {self.num_ships}")
-        print(" The top left corner is Row : 0 and Column : 0")
-        print(" The @ on the board is your ships")
-        print(" The * on the computer board will show the computer sinking ship")
+        print(" Top left corner is row: 0, col: 0")
         print("-" * 35)
 
 
-size = input("Please choose a grid size you want to use?\n")
+# Ask the user what grid size to use, validate the size, then start a new game
+size = input("What grid size do you want to use?\n")
 while True:
     try:
         size = int(size)
         break
     except ValueError:
         print("Row and column must be numbers")
-    size = input("Please choose a grid size you want to use?\n")
+    size = input("What grid size do you want to use?\n")
 
 game = Game(size=size, num_ships=4)
 game.start()
