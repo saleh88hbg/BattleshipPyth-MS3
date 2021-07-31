@@ -105,6 +105,7 @@ class Game:
         tmp_board = Board(self.size, self.num_ships, "Computer", player=False)
         self.computer_board = tmp_board
         player_name = input("Please enter your name:\n")
+        print("-" * 45)
         tmp_board = Board(self.size, self.num_ships, player_name, player=True)
         self.player_board = tmp_board
 
@@ -147,6 +148,7 @@ class Game:
         """
         while True:
             try:
+                print("-" * 45)
                 x = input("Guess a row:\n")
                 x = int(x)
                 y = input("Guess a column:\n")
@@ -191,7 +193,7 @@ class Game:
         """
         Output the scores after each round
         """
-        print("-" * 35)
+        print("-" * 45)
         print(f"{self.player_board.name} guessed " +
               f"{self.computer_board.last_guess()}")
         if player_hit:
@@ -208,17 +210,17 @@ class Game:
         print("\nAfter this round, the scores are:")
         print(f"{self.player_board.name}:" +
               f"{self.scores['player']} . Computer:{self.scores['computer']}")
-        print("-" * 35)
+        print("-" * 45)
 
     def show_info(self):
         """
         Show welcome message and information about the board
         """
-        print("-" * 35)
+        print("-" * 45)
         print(" Welcome to the great battle of BATTLESHIPS!!")
         print(f" Board Size: {self.size}. Number of ships: {self.num_ships}")
         print(" Top left corner is row: 0, col: 0")
-        print("-" * 35)
+        print("-" * 45)
 
 
 # Ask the user what grid size to use, validate the size, then start a new game
