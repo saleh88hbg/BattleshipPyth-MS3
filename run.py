@@ -215,7 +215,7 @@ class Game:
         Show welcome message and information about the board
         """
         print("-" * 35)
-        print(" Welcome to ULTIMATE BATTLESHIPS!!")
+        print(" Welcome to the great battle of BATTLESHIPS!!")
         print(f" Board Size: {self.size}. Number of ships: {self.num_ships}")
         print(" Top left corner is row: 0, col: 0")
         print("-" * 35)
