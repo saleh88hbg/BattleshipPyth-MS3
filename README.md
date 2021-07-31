@@ -2,7 +2,7 @@
 
 ## About 
 
-Battleship is an terminal game programed with Python, wich runs in the Code Institute mock terminal on Heroku.
+Battleship is a terminal game programed with Python, which runs in the Code Institute mock terminal on Heroku.
 
 Battleship is a funny and a widely-known board game in which the goal is to destroy the opposing player's fleet.
 It all depends on the luck of your finding shots to initially hit your targets. 
@@ -17,20 +17,21 @@ Give it a try!
 
 ## User Experriense
 
-![Responsive Battleship](assets/img/readmeimg/kkkkkk.png)
+![Responsive Battleship](assets/readmeimg/responsivepython.png)
 
 
 
 ## How to play
 
 In this version of Battleship the user starts the game by first typing the size of the grid they would like to play on.
-By typing in the name on the player the game will fire on and the user will have the ability to strike their first move 
-by guissing and calling out coordinates to find out the computer ships and sink them.
-The game will randomly generate and populate four ships on each board. 
-The grid allways start on: 0 row and 0 column.
+By typing in the name of the player, the game will then fire on and the user will have the ability to strike their first move
+by guessing and calling out coordinates to find out the computer ships and sink them.
+The game will randomly generate and populate four ships on each board.
+The grid always start on: 0 row and 0 columns.
 Guesses are marked on the board with an X and hits are marked by * .
-To gain a win you have to sink all of the computer's ships before it sinks yours!
-  
+To gain a win, you have to sink all the computer's ships before it sinks yours!
+
+
 
 ## Features 
 
@@ -41,10 +42,10 @@ To gain a win you have to sink all of the computer's ships before it sinks yours
   - One board each are generated on the specified grid size
   - Ships are randomly placed on the player and the computer board
   - The player can see where his ships are located by the (@) mark
-  - The player can not se where the computer ships are located on the board
+  - The player can not see where the computer ships are located on the board
   
 
-![Board](assets/img/readmeimg/Start the Battle.png)
+![Board](assets/readmeimg/startgame.png)
 
 
 
@@ -55,24 +56,24 @@ To gain a win you have to sink all of the computer's ships before it sinks yours
   - View chosen guess
   
 
-![Board](assets/img/readmeimg/kkkkkk.png)
+![Board](assets/readmeimg/gameguess.png)
 
 
 
 - __In game Validation__
 
   - Only numbers are verified as an input
-  - The user cannot guess same cordinents twice
-  - Cordinates outside the grid size is not allowed
+  - The user can't guess the same coordinates twice
+  - Coordinates outside the grid size is not allowed
   - The Data is maintained in class instances
   
 
-![Board](assets/img/readmeimg/kkkkkk.png)
+![Board](assets/readmeimg/gamevalidation.png)
 
 
 
 ### Features Left to Implement
-In a near future I would like to implement:
+In a near future, I would like to implement:
 - 2 player mode
 - Allow user to position ships themselves
 
@@ -84,15 +85,15 @@ I decided to use two classes for the game model. One Board class and one Game cl
 
 - __Board Class__
   - self.size = To set the board size
-  - self.num_ships = To set number of ships in game
+  - self.num_ships = To set number of ships in-game
   - self.player = Bolian indicate if the board belongs to a player or computer
   - self.guesses = List of passed guesses
-  - self.populate = Creates in memory board with the players ship
+  - self.populate = Creates in-memory board with the players ship
   
   
 - __Game Class__
   - self.size = To set the board size
-  - self.num_ships = To set number of ships in game
+  - self.num_ships = To set number of ships in-game
   - self.scores = Set score when ship is sunk
 
 
@@ -106,8 +107,8 @@ I decided to use two classes for the game model. One Board class and one Game cl
 - Manual invalid inputs
   - Validate that Value Error is given to the user when wrong value is inputted
   - Write string, text instead of numbers when numbers are expected
-  - Out of bounds inputs exemple out of grid number
-  - Same guess can not be performed twice
+  - Out of bounds inputs example out of grid number
+  - Same guess cannot be performed twice
 
 - Local terminal and the Code institute Heroku terminal
   - Test done on my local terminal in Visual Studio IDE
@@ -155,7 +156,7 @@ This project was published and deplyed using the Code Institute mock teminal for
    - Set the buildpack in the setting to "heroku/python" and "heroku/nodejs"
    - In the "Deploy" menu chose "Deployment method" GitHub
    - Connect and choose the repository in the "App connected to GitHub" 
-   - Choose either "Automatic deployment" = wich means that every push to the branch you specify will deploy a new version of this app 
+   - Choose either "Automatic deployment" = which means that every push to the branch you specify will deploy a new version of this app 
    - "Manual deploy" = this will deploy the current state/version of the branch   
 
 The live link can be found here - https://battleship-ms3.herokuapp.com/
